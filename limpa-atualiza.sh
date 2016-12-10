@@ -4,6 +4,7 @@
 # Remove o worm MF e atualiza para a ultima versao do AirOS disponivel oficial
 #
 # Atualizado por Fábio Farias - bgpconsultoria@gmail.com
+# Atualizado por RégisRibeiro - 10-12-2016
 #
 ##### NAO ALTERAR ####
 /bin/sed -ir '/mcad/ c ' /etc/inittab
