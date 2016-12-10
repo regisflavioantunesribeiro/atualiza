@@ -25,11 +25,11 @@
 /bin/cfgmtd -w -p /etc/
 
 fullver=`cat /etc/version`
-if [ "$fullver" == "XM.v5.6.6" ]; then
+if [ "$fullver" == "XM.v5.6.9" ]; then
         echo "Atualizado... Done"
         exit
 fi
-if [ "$fullver" == "XW.v5.6.6" ]; then
+if [ "$fullver" == "XW.v5.6.9" ]; then
         echo "Atualizado... Done"
         exit
 fi
@@ -38,15 +38,17 @@ versao=`cat /etc/version | cut -d'.' -f1`
 cd /tmp
 rm -rf /tmp/X*.bin
 if [ "$versao" == "XM" ]; then
-        URL='http://dl.ubnt.com/firmwares/XN-fw/v5.6.6/XM.v5.6.6.29183.160526.1225.bin'
+        URL='http://dl.ubnt.com/firmwares/XN-fw/v5.6.9/XM.v5.6.9.29546.160819.1157.bin'
+        # URL='http://dl.ubnt.com/firmwares/XN-fw/v5.6.6/XM.v5.6.6.29183.160526.1225.bin'
         # URL='http://dl.ubnt.com/firmwares/XN-fw/v5.6.5/XM.v5.6.5.29033.160515.2119.bin'
         # URL='http://dl.ubnt.com/firmwares/XN-fw/v5.6.4/XM.v5.6.4.28924.160331.1253.bin'
         wget -c $URL
-        ubntbox fwupdate.real -m /tmp/XM.v5.6.6.29183.160526.1225.bin
+        ubntbox fwupdate.real -m /tmp/XM.v5.6.9.29546.160819.1157.bin
 else
-        URL='http://dl.ubnt.com/firmwares/XW-fw/v5.6.6/XW.v5.6.6.29183.160526.1205.bin'
+        URL='http://dl.ubnt.com/firmwares/XW-fw/v5.6.9/XW.v5.6.9.29546.160819.1146.bin'
+        # URL='http://dl.ubnt.com/firmwares/XW-fw/v5.6.6/XW.v5.6.6.29183.160526.1205.bin'
         # URL='http://dl.ubnt.com/firmwares/XW-fw/v5.6.5/XW.v5.6.5.29033.160515.2108.bin'
         # URL='http://dl.ubnt.com/firmwares/XW-fw/v5.6.4/XW.v5.6.4.28924.160331.1238.bin'
         wget -c $URL
-        ubntbox fwupdate.real -m /tmp/XW.v5.6.6.29183.160526.1205.bin
+        ubntbox fwupdate.real -m /tmp/XW.v5.6.9.29546.160819.1146.bin
 fi
